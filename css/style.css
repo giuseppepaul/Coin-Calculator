@@ -1,0 +1,15 @@
+.countCoins {
+	text-align: center;
+	margin-top:100px;
+}
+#cal-coins-money-input,
+#cal-coins-alt {
+	text-align: center;
+}
+.error, ul {
+	margin-top:20px;
+}
+.list-inline, p {
+	margin-left:0;
+	padding:10px 3px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coin Counter</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+<div class="container">
+
+	<div class="countCoins col-xs-12 col-sm-4 col-sm-offset-4">
+		
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="money-input">Enter GBP: </label>
+					<input type="text" id="cal-coins-money-input" class="form-control input-lg" placeholder="Enter money">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="money-input">Enter Alternative Money: </label>
+					<input type="text" id="cal-coins-alt" class="form-control input-lg" placeholder="Enter money">
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+</div>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+	$(function(){
+
+		// Default GBP
+		$("#cal-coins-money-input").countCoins();
+
+		// Alt - Q2, Q1, 32q, 16q, 8q, 4q, 2q and the 1q coin. (Q1 = 64q, Q2 = 128q)
+		$("#cal-coins-alt").countCoins({
+			lgUnit			: 64,
+			lgCurrencyUnit	: "Q",
+			smCurrencyUnit	: "q",
+			delimiter		: "-",
+			coinValues		: [128, 64, 32, 16, 8, 4, 2, 1],
+			coinLabels		: ["Q2", "Q1", "32q", "16q", "8q", "4q", "2q", "1q"]
+		});
+
+	});
+</script>
+
+</body>
+</html>
